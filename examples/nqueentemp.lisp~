@@ -1,0 +1,20 @@
+
+
+(defvar sp (new_GlSpace 4 0 0))
+
+;; declare four arrays of variables
+(defvar queen (new_IntVarList sp 4 0 3))
+(defvar intlist1 (new_IntList 4 0 1))
+(defvar intlist2 (new_IntList 4 0 -1))
+
+;; show the space contents
+ (GlSpace_debug sp)
+
+;; post all different constraint on queen
+(g_distinct sp (IntVarList_get queen))
+(distinct sp (IntList_get intlist1) (IntVarList_get queen))
+(distinct sp (IntList_get intlist2) (IntVarList_get queen))
+
+
+(GlSpace_branch sp)
+(GlSpace_run sp)

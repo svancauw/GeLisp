@@ -1,0 +1,19 @@
+;; (load "/Users/saschavancauwelaert/Documents/EPL/Memoire/gelisp/setup.lisp")
+
+(defun test
+	;; declare a space
+	(defvar sp (new_GlSpace))
+	;; declare a single var
+	(defvar i (GlSpace_newIntVar sp 0 4))
+	;; declare an array of variables
+	(defvar a (new_IntVarList sp 2 1 10))
+	;; show the space contents
+ 	(GlSpace_debug sp)
+	;; post all different constraint on a
+	(g_distinct sp (IntVarList_get a))
+	;; post a[0] = 3
+	(dom sp (IntVarList_getVar a 0) 3)
+
+	(GlSpace_branch sp)
+	(GlSpace_run sp)
+)

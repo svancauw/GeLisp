@@ -1,0 +1,2 @@
+/usr/bin/ar cr libcxxgelisp.a  CMakeFiles/cxxgelisp.dir/gelisp.cpp.o
+/usr/bin/ranlib libcxxgelisp.a
