@@ -1,0 +1,1 @@
+This project allows to use Gecode (C++ library for constraint programming) from the Common Lisp language.
